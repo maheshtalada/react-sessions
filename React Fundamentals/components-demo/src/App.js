@@ -11,13 +11,14 @@ import EventBind from "./components/EventBind";
 import ParentComponent from "./components/ParentComponent";
 import UserGreeting from "./components/UserGreeting";
 import NameList from "./components/NameList";
+import ToDoList from "./components/KeyAntipattern";
 
 class App extends Component {
     render() {
         return (
             <div className="App">
                 <br />
-                <Hello />
+                <ToDoList />
                 {/* <Hello />
                 <Greet name="Bruce" heroName="Batman">
                   <p>This is children props</p>
