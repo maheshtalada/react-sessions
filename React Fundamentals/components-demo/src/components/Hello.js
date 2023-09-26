@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
 const Hello = () => {
-  return (
-    <div className='dummyClass'>
-      <h1>Hello Vishwas</h1>
-    </div>
-  )
+    return (
+        <div className="dummyClass">
+            <h1>Hello Brillio</h1>
+        </div>
+    );
 
-  // return React.createElement(
-  //   'div',
-  //   {id: 'hello', className: 'dummyClass'},
-  //   React.createElement('h1', null, 'Hello Vishwas')
-  // )
-}
+    // return React.createElement(
+    //   'div',
+    //   {id: 'hello', className: 'dummyClass'},
+    //   React.createElement('h1', null, 'Hello Brillio')
+    // )
+};
 
-export default Hello
+export default Hello;
