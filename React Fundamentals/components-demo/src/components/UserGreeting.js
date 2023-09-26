@@ -1,3 +1,10 @@
+/*
+  If/else
+  Element variables
+  Ternary conditional operator
+  Short circuit operator
+*/
+
 import React, { Component } from "react";
 
 class UserGreeting extends Component {
