@@ -6,28 +6,40 @@ class LifecycleA extends Component {
         super(props);
         this.state = {
             name: "Brillio",
+            isLoading: props.isLoading,
         };
         console.log("LifecycleA constructor");
+        this.timer = null;
     }
 
+    // when we use redux ,  this method will be mostly
     static getDerivedStateFromProps(props, state) {
+        //console.log(props, state);
         console.log("LifecycleA getDerivedStateFromProps");
+        //return { isLoading: false };
         return null;
     }
 
     componentDidMount() {
         console.log("LifecycleA componentDidMount");
+        // make HTTP call to get some data
+        // clearTimeout(this.timer);
+        // this.timer = setTimeout(() => {
+        //     this.setState({ isLoading: true, name: "comonent" });
+        // }, 2000);
+
+        // make an api call
     }
 
-    shouldComponentUpdate() {
-        console.log("LifecycleA shouldComponentUpdate");
-        return true;
-    }
+    // shouldComponentUpdate() {
+    //     console.log("LifecycleA shouldComponentUpdate");
+    //     return true;
+    // }
 
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log("LifecycleA getSnapshotBeforeUpdate");
-        return null;
-    }
+    // getSnapshotBeforeUpdate(prevProps, prevState) {
+    //     console.log("LifecycleA getSnapshotBeforeUpdate");
+    //     return null;
+    // }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("LifecycleA componentDidUpdate");
@@ -35,18 +47,21 @@ class LifecycleA extends Component {
 
     changeState = () => {
         this.setState({
-            name: "Brillio",
+            name: "react",
         });
     };
 
+    //showSomeData() {}
+
     render() {
         console.log("LifecycleA render");
+        const { isLoading } = this.state;
         return (
-            <div>
+            <>
                 <button onClick={this.changeState}>Change state</button>
-                LifecycleA
-                <LifecycleB />
-            </div>
+                {/* <LifecycleB /> */}
+                {isLoading && <span>Loading ... </span>}
+            </>
         );
     }
 }
