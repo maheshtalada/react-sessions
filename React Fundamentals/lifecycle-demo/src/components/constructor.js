@@ -7,6 +7,7 @@ export default class App extends Component {
             name: "Constructor Method",
         };
     }
+
     render() {
         return (
             <div>
