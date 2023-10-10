@@ -16,7 +16,7 @@ class App extends Component {
                 {/* <LifecycleA lifeCycle="mounting" isLoading={true} /> */}
                 {/* <ComponentWillUnmount /> */}
                 {/* <ComponentDidMountMethod /> */}
-                <ProductDetails />
+                {/* <ProductDetails /> */}
                 <ShoppingCart />
             </div>
         );

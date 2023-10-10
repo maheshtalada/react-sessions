@@ -14,19 +14,36 @@ class ShoppingCart extends Component {
     }
 
     componentDidMount() {
-        // Load cart data from localStorage
+        // Simulate fetching product data from an API
+        fetch("https://dummyjson.com/products")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                this.setState({ products: data.products });
+            });
+
         const savedCart = localStorage.getItem("cart");
         if (savedCart) {
             this.setState({ cart: JSON.parse(savedCart) });
         }
     }
 
+    // componentDidMount() {
+    //     // Load cart data from localStorage
+    //     const savedCart = localStorage.getItem("cart");
+    //     if (savedCart) {
+    //         this.setState({ cart: JSON.parse(savedCart) });
+    //     }
+    // }
+
     componentDidUpdate() {
+        console.log("added item to cart");
         // Update localStorage when cart state changes
         localStorage.setItem("cart", JSON.stringify(this.state.cart));
     }
 
     addToCart(product) {
+        console.log("product", product, "old cart", this.state.cart);
         this.setState((prevState) => ({
             cart: [...prevState.cart, product],
         }));
@@ -54,7 +71,9 @@ class ShoppingCart extends Component {
                     <ul>
                         {products.map((product) => (
                             <li key={product.id}>
-                                {product.name} - ${product.price}
+                                <a href={`/${product.id}`}>
+                                    {product.title} - ${product.price}
+                                </a>
                                 <button onClick={() => this.addToCart(product)}>
                                     Add to Cart
                                 </button>
@@ -67,7 +86,7 @@ class ShoppingCart extends Component {
                     <ul>
                         {cart.map((item) => (
                             <li key={item.id}>
-                                {item.name} - ${item.price}
+                                {item.title} - ${item.price}
                                 <button
                                     onClick={() => this.removeFromCart(item)}
                                 >

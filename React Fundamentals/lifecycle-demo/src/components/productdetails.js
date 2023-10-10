@@ -10,7 +10,7 @@ class ProductDetails extends Component {
 
     componentDidMount() {
         // Simulate fetching product data from an API
-        fetch("https://dummyjson.com/products/1")
+        fetch("https://dummyjson.com/products")
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ productData: data });
@@ -46,6 +46,7 @@ class ProductDetails extends Component {
                 <h2>{productData.name}</h2>
                 <p>{productData.description}</p>
                 <p>Price: ${productData.price}</p>
+                <button onClick={this.getNext}> Next</button>
             </div>
         );
     }

@@ -55,12 +55,12 @@ class LifecycleA extends Component {
 
     render() {
         console.log("LifecycleA render");
-        const { isLoading } = this.state;
+        const { isLoading, name } = this.state;
         return (
             <>
                 <button onClick={this.changeState}>Change state</button>
                 {/* <LifecycleB /> */}
-                {isLoading && <span>Loading ... </span>}
+                {isLoading && <span>{name} </span>}
             </>
         );
     }
