@@ -21,7 +21,10 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <ComponentC />
+                {/* <RefsDemo /> */}
+                {/* <FocusInput /> */}
+                {/* <ComponentC /> */}
+                <ParentComp />
                 {/* <Counter
 					render={(count, incrementCount) =>
 					<ClickCounterTwo

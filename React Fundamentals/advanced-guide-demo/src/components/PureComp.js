@@ -1,14 +1,10 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Component } from "react";
 
 class PureComp extends PureComponent {
-  render() {
-    console.log('Pure Comp render')
-    return (
-      <div>
-        Pure Component {this.props.name}
-      </div>
-    )
-  }
+    render() {
+        console.log("Pure Comp render");
+        return <div>Pure Component {this.props.name}</div>;
+    }
 }
 
-export default PureComp
+export default PureComp;

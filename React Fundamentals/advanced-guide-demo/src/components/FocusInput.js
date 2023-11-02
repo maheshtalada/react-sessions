@@ -1,25 +1,30 @@
-import React, { Component } from 'react'
-import Input from './Input';
+import React, { Component, PureComponent } from "react";
+import Input from "./Input";
 
 class FocusInput extends Component {
-  constructor(props) {
-    super(props)
-    this.componentRef = React.createRef()
-  }
+    constructor(props) {
+        super(props);
+        this.componentRef = React.createRef();
+    }
 
-  clickHandler = () => {
-    console.log(this.componentRef.current)
-    this.componentRef.current.focusInput()
-  }
+    clickHandler = () => {
+        console.log(this.componentRef.current);
+        console.log(this.componentRef);
+        this.componentRef.current.focusInput();
+    };
 
-  render() {
-    return (
-      <div>
-        <Input ref={this.componentRef}></Input>
-        <button onClick={this.clickHandler}>Focus Input</button>
-      </div>
-    )
-  }
+    componentDidUpdate() {
+        console.log("component updated");
+    }
+
+    render() {
+        return (
+            <div>
+                <Input ref={this.componentRef} />
+                <button onClick={this.clickHandler}>Focus Input</button>
+            </div>
+        );
+    }
 }
 
-export default FocusInput
+export default FocusInput;

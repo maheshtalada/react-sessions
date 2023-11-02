@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { forwardRef } from "react";
 
-// function FRInput() {
-//   return (
-//     <div>
-//       <input type="text"></input>
-//     </div>
-//   )
+const FRInput = forwardRef((props, ref) => {
+    return (
+        <div>
+            <input type="text" ref={ref} />
+        </div>
+    );
+});
+
+export default FRInput;
+
+// import React from 'react';
+
+// function FRInput(pros,ref) {
+// 	return (
+// 		<div>
+
+// 		</div>
+// 	);
 // }
 
-const FRInput = React.forwardRef((props, ref) => {
-	return (
-		<div>
-      <input type="text" ref={ref} />
-		</div>
-	)
-})
-
-export default FRInput
+// export default forwardRef(FRInput);
